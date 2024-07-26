@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Email with EmailJS</title>
+</head>
+<body>
+    <h2>Send Email Form</h2>
+    <form id="contact-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" required></textarea><br><br>
+        <button type="submit">Send Email</button>
+    </form>
+
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        (function(){
+            emailjs.init("rockerrock223@gmail.com"); // Replace with your EmailJS User ID
+        })();
+
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const formData = new FormData(this);
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+
+            emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', data)
+                .then((response) => {
+                    alert('Email sent successfully!');
+                    console.log('Success:', response);
+                }, (error) => {
+                    alert('Failed to send email.');
+                    console.log('Error:', error);
+                });
+        });
+    </script>
+</body>
+</html>

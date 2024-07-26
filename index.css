@@ -1,0 +1,234 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(74, 119, 150);
+    display: flex;
+    flex-direction: column;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(45, 46, 46);
+    color: white;
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+header .logo img {
+    height: 40px;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin-right: 3rem;
+    padding: 0;
+}
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: rgb(89, 177, 228);
+}
+
+.hero {
+    background: url('./img/welcome.jpg') no-repeat center center/cover;
+    color: #fff;
+    height: 25rem;
+    object-fit: cover;
+    text-align: center;
+    padding: 6rem 1rem;
+    margin-top: 60px; 
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+}
+
+.hero .btn {
+    background-color: #ff9900;
+    color: #fff;
+    padding: 0.75rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    transition: background 0.3s ease;
+}
+
+.hero .btn:hover {
+    background-color: #e68a00;
+}
+
+section {
+    padding: 2rem;
+    color: white;
+}
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+section p {
+    font-size: 1rem;
+    line-height: 1.6;
+
+}
+#contactForm{
+    box-shadow: 0px 0px 10px 1px black;
+    background: rgb(116, 113, 113);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    animation: both  ease-in-out rightone 1s;
+    width: 50%;
+    height: 20%;
+}
+
+.service-item {
+    background: rgb(116, 113, 113);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 3rem;
+    width: 90%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    animation: both  ease-in-out rightone 1s;
+    box-shadow: 0px 0px 10px 1px black;
+}
+
+@keyframes grow{
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+
+@keyframes rightone{
+    0%{
+        transform:translateX(-100px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}
+
+@keyframes leftone{
+    0%{
+        transform:translateX(100px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}
+
+#services #one{
+    animation: infinite rightone ease-in- 3s;
+}
+
+
+
+.service-item:hover {
+    background: rgb(100, 100, 100);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+form label {
+    margin-bottom: 0.5rem;
+}
+
+form input, 
+form textarea {
+    padding: 0.75rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+form button {
+    padding: 0.75rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff9900;
+    width: 30%;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+form button:hover {
+    background-color: #e68a00;
+}
+
+footer {
+    background-color: rgb(66, 66, 66);
+    color: white;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+}
+
+
+@media screen and (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        display: none;
+    }
+
+    header{
+        flex-direction: column;
+    }
+
+    nav ul li {
+        display: inline-block;
+        margin: 0.5rem 0;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.25rem;
+    }
+}
+
+.social{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.social img{
+    height: 3rem;
+    width: 3rem;
+}
